@@ -6,7 +6,10 @@ class TaskList():
         self._tasks.append(task)
 
     def list_incomplete(self):
-        return self._tasks
+        return [
+            task for task in self._tasks
+            if task.complete == False
+        ]
     
     def list_complete(self):
         pass
