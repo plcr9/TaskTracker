@@ -8,7 +8,7 @@ class TaskList():
     def list_incomplete(self):
         return [
             task for task in self._tasks
-            if task.complete == False
+            if not task.complete
         ]
     
     def list_complete(self):
