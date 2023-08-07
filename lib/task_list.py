@@ -12,4 +12,7 @@ class TaskList():
         ]
     
     def list_complete(self):
-        pass
+        return [
+            task for task in self._tasks
+            if task.complete
+        ]

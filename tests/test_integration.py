@@ -19,3 +19,13 @@ def test_marks_tasks_as_complete_and_removes_them_from_incomplete():
     tracker.add(task_2)
     task_1.mark_complete()
     assert tracker.list_incomplete() == [task_2]
+
+'''When multiple tasks added, and mark one as complete, it shows up in the complete list'''
+def test_marks_tasks_as_complete_and_adds_to_complete_list():
+    tracker = TaskList()
+    task_1 = Task("Clear the shed")
+    task_2 = Task("Jump start the car")
+    tracker.add(task_1)
+    tracker.add(task_2)
+    task_1.mark_complete()
+    assert tracker.list_complete() == [task_1]
